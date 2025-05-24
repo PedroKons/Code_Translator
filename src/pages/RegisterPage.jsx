@@ -41,8 +41,9 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className='w-[100%] h-[100vh] flex flex-col justify-center items-center p-4'>
+        <div className='w-[100%] h-[100vh] flex flex-col justify-center items-center p-4 bg-primary'>
             <h1 className='text-8xl font-bold font-["Bright"] mt-10'>Code Traslator</h1>
+            <p>Treine seu inglês e conceitos de programação</p>
             <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 h-full w-full'>
             {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
             <label className='text-2xl font-bold'>Registrar</label>
@@ -53,6 +54,7 @@ export default function RegisterPage() {
                 placeholder="Nome" 
                 disabled={isLoading}
                 className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
+                required
             />
             <input 
                 type="email" 
@@ -61,6 +63,7 @@ export default function RegisterPage() {
                 placeholder="Email" 
                 disabled={isLoading}
                 className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
+                required
             />
             <input 
                 type="password" 
@@ -69,6 +72,7 @@ export default function RegisterPage() {
                 placeholder="Senha" 
                 disabled={isLoading}
                 className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
+                required
             />
             <input 
                 type="password" 
@@ -77,10 +81,14 @@ export default function RegisterPage() {
                 placeholder="Confirmar Senha" 
                 disabled={isLoading}
                 className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
+                required
             />
             <div className='flex flex-row gap-4 justify-center items-center w-[20%]'>
-                <button type="submit" disabled={isLoading} className='w-[100%] h-[40px] bg-black text-white rounded-md p-2'>
+                <button type="submit" disabled={isLoading} className='button-19'>
                 {isLoading ? 'Registrando...' : 'Registrar'}
+                </button>
+                <button onClick={() => navigate('/')} className='button-19'>
+                    Entrar
                 </button>
             </div>
             </form>

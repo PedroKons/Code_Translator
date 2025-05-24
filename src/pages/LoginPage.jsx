@@ -15,6 +15,10 @@ export default function LoginPage() {
     navigate('/register')
   }
 
+  const handleRank = () => {
+    navigate('/ranking')
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
@@ -37,8 +41,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className='w-[100%] h-[100vh] flex flex-col justify-center items-center p-4'>
+    <div className='w-[100%] h-[100vh] flex flex-col justify-center items-center p-4 bg-primary'>
       <h1 className='text-8xl font-bold font-["Bright"] mt-10'>Code Traslator</h1>
+      <p>Treine seu inglês e conceitos de programação</p>
       <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 h-full w-full'>
         {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
         <label className='text-2xl font-bold'>Login</label>
@@ -49,6 +54,7 @@ export default function LoginPage() {
           placeholder="Email" 
           disabled={isLoading}
           className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
+          required
         />
         <input 
           type="password" 
@@ -57,16 +63,20 @@ export default function LoginPage() {
           placeholder="Senha" 
           disabled={isLoading}
           className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
+          required
         />
         <div className='flex flex-row gap-4 justify-center items-center w-[20%]'>
-          <button type="submit" disabled={isLoading} className='w-[100%] h-[40px] bg-black text-white rounded-md p-2'>
+          <button type="submit" disabled={isLoading} className='button-19'>
             {isLoading ? 'Entrando...' : 'Entrar'}
           </button>
-          <button onClick={handleRegister} className='w-[100%] h-[40px] bg-black text-white rounded-md p-2'>
+          <button onClick={handleRegister} className='button-19'>
             Cadastrar
           </button>
         </div>
       </form>
+      <div className='flex flex-row justify-center items-center gap-2'>
+        <button onClick={handleRank} className='button-19'>Ranking</button>
+      </div>
     </div>
   )
 }

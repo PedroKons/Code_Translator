@@ -7,6 +7,7 @@ import GamePage from './pages/GamePage.jsx'
 import { AuthProvider } from './contexts/AuthContext.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
+import RankPage from './pages/RankPage.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </ProtectedRoute>
           } />
           <Route path='/register' element={<RegisterPage />} />
+          <Route path='/ranking' element={<RankPage/>}></Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
