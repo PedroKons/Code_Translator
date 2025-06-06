@@ -12,7 +12,7 @@ export default function RankPage() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch("http://localhost:3000/leaderboard")
+        const response = await fetch("https://api.pktech.fun/leaderboard")
         const data = await response.json()
         setUsers(data)
         setSuccess(true)

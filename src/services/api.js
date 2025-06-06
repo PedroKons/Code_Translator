@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://api.pktech.fun';
 
 export async function loginUser(email, password) {
     try {
