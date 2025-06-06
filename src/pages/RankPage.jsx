@@ -25,18 +25,18 @@ export default function RankPage() {
   }, [])
 
   return (
-    <div className='w-[100%] min-h-[100vh] flex flex-col justify-center items-center bg-primary'>
-      <div className="flex flex-row justify-start items-center gap-2">
-        <button onClick={() => navigate('/game')} className="button-19">Jogar</button>
+    <div className='w-[100%] min-h-[100vh] flex flex-col justify-center items-center bg-primary p-4'>
+      <div className="flex flex-row justify-start items-center gap-2 w-full md:w-auto">
+        <button onClick={() => navigate('/game')} className="button-19 w-full md:w-auto">Jogar</button>
       </div>
-      <h1 className='text-8xl font-bold font-["Bright"] mt-10'>Code Traslator</h1>
-      <p>Treine seu inglês e conceitos de programação</p>
-      <div className='flex flex-col justify-start items-center h-full w-[100%] mt-16 gap-6'>
-        <h2 className='text-3xl font-bold font-["Bright"]'>Ranking of the best</h2>
-        <div className="border-tertiary border-2 p-2 rounded-md w-[80%]">
+      <h1 className='text-4xl md:text-8xl font-bold font-["Bright"] mt-10 text-center'>Code Traslator</h1>
+      <p className='text-center'>Treine seu inglês e conceitos de programação</p>
+      <div className='flex flex-col justify-start items-center h-full w-full md:w-[100%] mt-8 md:mt-16 gap-4 md:gap-6'>
+        <h2 className='text-2xl md:text-3xl font-bold font-["Bright"] text-center'>Ranking of the best</h2>
+        <div className="border-tertiary border-2 p-2 rounded-md w-full md:w-[80%]">
             <div className="w-full flex items-center justify-start gap-2 p-2">
-                <Trophy />
-                <p className="text-2xl font-bold">Classificação Geral</p>
+                <Trophy className="w-6 h-6 md:w-8 md:h-8" />
+                <p className="text-xl md:text-2xl font-bold">Classificação Geral</p>
             </div>
             <div className="flex flex-col gap-2">
                 {success && users.data.map((user, index) => (

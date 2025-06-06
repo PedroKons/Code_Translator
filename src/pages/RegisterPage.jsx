@@ -41,56 +41,56 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className='w-[100%] h-[100vh] flex flex-col justify-center items-center p-4 bg-primary'>
-            <h1 className='text-8xl font-bold font-["Bright"] mt-10'>Code Traslator</h1>
-            <p>Treine seu inglês e conceitos de programação</p>
-            <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 h-full w-full'>
-            {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
-            <label className='text-2xl font-bold'>Registrar</label>
-            <input 
-                type="text" 
-                value={name} 
-                onChange={(e) => setName(e.target.value)} 
-                placeholder="Nome" 
-                disabled={isLoading}
-                className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
-                required
-            />
-            <input 
-                type="email" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-                placeholder="Email" 
-                disabled={isLoading}
-                className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
-                required
-            />
-            <input 
-                type="password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                placeholder="Senha" 
-                disabled={isLoading}
-                className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
-                required
-            />
-            <input 
-                type="password" 
-                value={confirmPassword} 
-                onChange={(e) => setConfirmPassword(e.target.value)} 
-                placeholder="Confirmar Senha" 
-                disabled={isLoading}
-                className='w-[20%] h-[40px] border-2 border-gray-300 rounded-md p-2'
-                required
-            />
-            <div className='flex flex-row gap-4 justify-center items-center w-[20%]'>
-                <button type="submit" disabled={isLoading} className='button-19'>
-                {isLoading ? 'Registrando...' : 'Registrar'}
-                </button>
-                <button onClick={() => navigate('/')} className='button-19'>
-                    Entrar
-                </button>
-            </div>
+        <div className='w-[100%] min-h-[100vh] flex flex-col justify-center items-center p-4 bg-primary'>
+            <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold font-["Bright"] mt-10 text-center'>Code Traslator</h1>
+            <p className='text-center'>Treine seu inglês e conceitos de programação</p>
+            <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 h-full w-full max-w-[500px] px-4'>
+                {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
+                <label className='text-xl md:text-2xl font-bold'>Registrar</label>
+                <input 
+                    type="text" 
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)} 
+                    placeholder="Nome" 
+                    disabled={isLoading}
+                    className='w-full h-[40px] border-2 border-gray-300 rounded-md p-2'
+                    required
+                />
+                <input 
+                    type="email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    placeholder="Email" 
+                    disabled={isLoading}
+                    className='w-full h-[40px] border-2 border-gray-300 rounded-md p-2'
+                    required
+                />
+                <input 
+                    type="password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    placeholder="Senha" 
+                    disabled={isLoading}
+                    className='w-full h-[40px] border-2 border-gray-300 rounded-md p-2'
+                    required
+                />
+                <input 
+                    type="password" 
+                    value={confirmPassword} 
+                    onChange={(e) => setConfirmPassword(e.target.value)} 
+                    placeholder="Confirmar Senha" 
+                    disabled={isLoading}
+                    className='w-full h-[40px] border-2 border-gray-300 rounded-md p-2'
+                    required
+                />
+                <div className='flex flex-col sm:flex-row gap-4 justify-center items-center w-full'>
+                    <button type="submit" disabled={isLoading} className='button-19 w-full sm:w-auto'>
+                        {isLoading ? 'Registrando...' : 'Registrar'}
+                    </button>
+                    <button onClick={() => navigate('/')} className='button-19 w-full sm:w-auto'>
+                        Entrar
+                    </button>
+                </div>
             </form>
         </div>
     )
